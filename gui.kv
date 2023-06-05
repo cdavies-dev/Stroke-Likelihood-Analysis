@@ -1,0 +1,193 @@
+#:kivy 2.1
+
+Dashboard:
+    Dashboard:
+        id: dashboard
+
+<Dashboard>:
+
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        MDLabel:
+            text: 'Stroke Likelihood'
+            halign: 'center'
+            size_hint: 1, None
+            height: '100dp'
+            theme_text_color: 'Primary'
+
+        MDBoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: 0.1
+
+            MDBoxLayout:
+                orientation: 'vertical'
+                
+                MDLabel:
+                    text: 'Gender'
+                    halign: 'center'
+                    theme_text_color: 'Primary'
+
+                MDDropDownItem:
+                    id: cat_gender
+                    text: 'Category'
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+                    theme_text_color: 'Secondary'
+
+            MDBoxLayout:
+                orientation: 'vertical'
+                
+                MDLabel:
+                    text: 'Age'
+                    halign: 'center'
+                    theme_text_color: 'Primary'
+
+                MDTextField:
+                    hint_text: 'Integer'
+                    halign: 'center'
+                    theme_text_color: 'Secondary'
+ 
+            MDBoxLayout:
+                orientation: 'vertical'
+                
+                MDLabel:
+                    text: 'Hypertension'
+                    halign: 'center'
+                    theme_text_color: 'Primary'
+
+                MDDropDownItem:
+                    id: cat_hypertension
+                    text: 'Bool'
+                    halign: 'center'
+                    theme_text_color: 'Secondary'
+
+            MDBoxLayout:
+                orientation: 'vertical'
+                
+                MDLabel:
+                    text: 'Heart Disease'
+                    halign: 'center'
+                    theme_text_color: 'Primary'
+
+                MDDropDownItem:
+                    id: cat_heart_disease
+                    text: 'Category'
+                    halign: 'center'
+                    theme_text_color: 'Secondary'
+
+            MDBoxLayout:
+                orientation: 'vertical'
+                
+                MDLabel:
+                    text: 'Ever Married?'
+                    halign: 'center'
+                    theme_text_color: 'Primary'
+
+                MDDropDownItem:
+                    id: cat_ever_married
+                    text: 'Category'
+                    halign: 'center'
+                    theme_text_color: 'Secondary'
+
+            MDBoxLayout:
+                orientation: 'vertical'
+                
+                MDLabel:
+                    text: 'Employment'
+                    halign: 'center'
+                    theme_text_color: 'Primary'
+
+                MDDropDownItem:
+                    id: cat_employment
+                    text: 'Category'
+                    halign: 'center'
+                    theme_text_color: 'Secondary'
+
+            MDBoxLayout:
+                orientation: 'vertical'
+                
+                MDLabel:
+                    text: 'Residence'
+                    halign: 'center'
+                    theme_text_color: 'Primary'
+
+                MDDropDownItem:
+                    id: cat_residence
+                    text: 'Category'
+                    halign: 'center'
+                    theme_text_color: 'Secondary'
+
+            MDBoxLayout:
+                orientation: 'vertical'
+                
+                MDLabel:
+                    text: 'Average Glucose Levels'
+                    halign: 'center'
+                    theme_text_color: 'Primary'
+
+                MDTextField:
+                    hint_text: 'Float'
+                    halign: 'center'
+                    theme_text_color: 'Secondary'
+
+            MDBoxLayout:
+                orientation: 'vertical'
+                
+                MDLabel:
+                    text: 'BMI'
+                    halign: 'center'
+                    theme_text_color: 'Primary'
+
+                MDTextField:
+                    hint_text: 'Float'
+                    halign: 'center'
+                    theme_text_color: 'Secondary'
+
+            MDBoxLayout:
+                orientation: 'vertical'
+                
+                MDLabel:
+                    text: 'Smoking Status'
+                    halign: 'center'
+                    theme_text_color: 'Primary'
+
+                MDDropDownItem:
+                    id: cat_smoking_status
+                    text: 'Category'
+                    halign: 'center'
+                    theme_text_color: 'Secondary'
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: 0.2
+        
+            AnchorLayout:
+                anchor_x: 'center'
+                anchor_y: 'center'
+                size_hint: 1, 1
+            
+                Button:
+                    text: 'Generate'
+                    size_hint: None, None
+                    width: '200dp'
+                    height: '100dp'
+                    on_press: app.predict()
+            
+            BoxLayout:
+                orientation: 'vertical'
+            
+                MDLabel:
+                    text: 'Current likelihood of stroke as cause of death: '
+                    halign: 'left'
+                    theme_text_color: 'Primary'
+
+                MDLabel:
+                    text: 'Provided no change, likelihood in 5 years of stroke as cause of death: '
+                    halign: 'left'
+                    theme_text_color: 'Primary'
+
+                MDLabel:
+                    text: 'Provided no change, likelihood in 10 years of stroke as cause of death: '
+                    halign: 'left'
+                    theme_text_color: 'Primary'
+        
